@@ -1,4 +1,4 @@
-Davide's Portfolio
+# 🗺 Davide's Portfolio
 
 Welcome to my portfolio guide where I provide a walkthrough to my data projects.
 
