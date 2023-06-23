@@ -1,8 +1,5 @@
-import React from "react";
-
 type Item = {
-
-    node: JSX.Element
+    node: (JSX.Element),
     key: string,
     href: string,
     title: string,

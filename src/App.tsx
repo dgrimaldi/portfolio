@@ -1,11 +1,10 @@
 import React from 'react';
 import Layout from "./components/Layout";
-import AboutMe from "./features/AboutMe";
-import Contact from "./features/Contact";
+import slides from "./features/Slides";
 
 function App() {
   return (
-    <Layout items={[AboutMe, Contact]} />
+    <Layout items={slides} />
   );
 }
 
