@@ -2,8 +2,6 @@ import Item from "../interfaces/Item";
 import {Card} from "antd";
 
 
-
-
 const contact: Item = {
     key: "contact",
     node: <Card>
