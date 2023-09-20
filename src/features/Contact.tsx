@@ -6,7 +6,7 @@ const contact: Item = {
     key: "contact",
     node: <Card>
         Mobile:
-        +3934977833319
+        +393497783319
 
         Email:
         davide_grimaldi@hotmail.com

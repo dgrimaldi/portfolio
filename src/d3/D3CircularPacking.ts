@@ -1,11 +1,11 @@
 import {SimulationNodeDatum} from "d3";
 import * as d3 from "d3";
-const graphDimension: { width: number, height: number } = { width: 600, height: 450};
-const radius = 70;
+export const graphDimension: { width: number, height: number } = { width: 600, height: 450};
+const radius = 100;
 export const d3CircularPacking = (svg: d3.Selection<d3.BaseType, unknown, HTMLElement, SVGElement>) => {
 
         // create dummy data -> just one element per circle
-        let data: SimulationNodeDatum[] = d3.range(500).map(() => ({}))
+        let data: SimulationNodeDatum[] = d3.range(1000).map(() => ({}))
 
         // Initialize the circle: all located at the center of the svg area
         const node: d3.Selection<SVGCircleElement, SimulationNodeDatum, SVGGElement, unknown> = svg.append("g")
@@ -34,9 +34,6 @@ export const d3CircularPacking = (svg: d3.Selection<d3.BaseType, unknown, HTMLEl
         }
 
         const simulation = d3.forceSimulation(data)
-            // .force("link", d3.forceLink(links).id(d => d.id))
-            // .force("charge", d3.forceManyBody())
-            // .force("bottom", d3.forceRadial((d) => d.x || 500))
             .force("collide", d3.forceCollide(radius).iterations(4))
             .on("tick", ticked);
         function started(event:any) {
