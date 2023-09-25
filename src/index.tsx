@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { ApolloProvider } from '@apollo/client';
+import client from "./apollo/client";
 import App from './App';
 import {ConfigProvider, theme} from "antd";
 
@@ -10,12 +12,14 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-      <ConfigProvider
-          theme={{
-              algorithm: theme.darkAlgorithm,
-          }}
-      >
-          <App />
-      </ConfigProvider>
+      <ApolloProvider client={client}>
+          <ConfigProvider
+              theme={{
+                  algorithm: theme.darkAlgorithm,
+              }}
+          >
+              <App />
+          </ConfigProvider>
+      </ApolloProvider>
   </React.StrictMode>
 );

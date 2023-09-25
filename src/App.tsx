@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import Layout from "./components/Layout";
 import Expertise from "./features/Expertise";
 import Experience from "./features/Experience";
-import CircularPacking from "./features/CircularPacking";
+import CircularPacking from "./features/CircularPacking/CircularPacking";
 import {message} from "antd";
 const messageText: string = "Hi from Davide! Try to drag circles in the canvas"
 
