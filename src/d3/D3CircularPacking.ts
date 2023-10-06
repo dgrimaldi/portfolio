@@ -1,6 +1,6 @@
 import {SimulationNodeDatum} from "d3";
 import * as d3 from "d3";
-export const graphDimension: { width: number, height: number } = { width: 600, height: 450};
+const graphDimension: { width: number, height: number } = { width: 600, height: 450};
 const radius = 100;
 export const d3CircularPacking = (svg: d3.Selection<d3.BaseType, unknown, HTMLElement, SVGElement>) => {
 
