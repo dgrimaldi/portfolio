@@ -1,0 +1,88 @@
+// ability to alter its items’ width/height (and order) to best fill the available space
+// (mostly to accommodate to all kind of display devices and screen sizes).
+// A flex container expands items to fill available free space or shrinks them to prevent overflow.
+
+//Most importantly, the flexbox layout is direction-agnostic as opposed to the regular layouts
+// (block which is vertically-based and inline which is horizontally-based).
+// While those work well for pages, they lack flexibility (no pun intended) to support large or complex applications
+// (especially when it comes to orientation changing, resizing, stretching, shrinking, etc.).
+
+.container{
+  flex-direction: column;
+  display: flex;
+  flex-flow: row wrap; // This is a shorthand for the flex-direction and flex-wrap properties
+  // flex-direction: row | row-reverse | column | column-reverse // the main-axis of items in the container
+  // flex-wrap: nowrap | wrap | wrap-reverse // wrap --> flex items will wrap onto multiple lines, from top to bottom
+}
+
+/* We tell all items to be 100% width, via flex-basis */
+.container > * {
+  flex: 1 100%;
+}
+
+/* We tell header to be 100% width, via flex-basis */
+.header {
+  flex: 1 100% !important;
+}
+
+.container-frog{
+  justify-content: center;
+  align-content: center // flex-start | flex-end
+}
+
+.item-frog{
+  order: 2;       // controls the order in which they appear in the flex container.
+  flex-grow: 4;   // defines the ability for a flex item to grow if necessary.
+  align-self: flex-end // is the same as align-content
+}
+
+
+.content {
+  margin: 15em 0 5em 0;
+}
+.content-0 {
+  margin: 0 0 5em 0;
+}
+.content-1 {
+  margin: 0 0 5em 0;
+}
+
+
+/* We rely on source order for mobile-first approach
+ * in this case:
+ * 1. header
+ * 2. article
+ * 3. aside 1
+ * 4. aside 2
+ * 5. footer
+ */
+
+/* Medium screens */
+@media all and (min-width: 600px) {
+  /* We tell both sidebars to share a row */
+  .aside { flex: 0 auto; }
+
+  .main {
+    padding: 0 5em;
+  }
+}
+
+@media all and (max-width: 600px) {
+  /* We tell both sidebars to share a row */
+  .aside { display: none }
+}
+
+/* Large screens */
+@media all and (min-width: 800px) {
+  /* We invert order of first sidebar and main
+   * And tell the main element to take twice as much width as the other two sidebars
+   */
+  .main { flex: 3 0; }
+  .aside-1 { order: 1; }
+  .main    { order: 2; }
+  .aside-2 { order: 3; }
+  .footer  { order: 4; }
+}
+
+
+
