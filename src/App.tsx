@@ -1,21 +1,14 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import Layout from "./components/Layout/Layout";
 import Expertise from "./features/Expertise";
 import Experience from "./features/Experience";
 import CircularPacking from "./features/CircularPacking/CircularPacking";
-import {message} from "antd";
-const messageText: string = "Hi from Davide! Try to drag circles in the canvas"
 
 function App() {
-  const [messageApi, contextHolder] = message.useMessage();
-  useEffect(() => {
-    messageApi.info({content: messageText, key: "message"});
-    return () => { messageApi.destroy("message") }
-  })
+
 
   return (
       <>
-        {contextHolder}
         <Layout components={[
             {
               title: '',

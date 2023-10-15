@@ -21,8 +21,13 @@
 }
 
 /* We tell header to be 100% width, via flex-basis */
-.header {
+.header  {
   flex: 1 100% !important;
+  display: flex;
+  flex-flow: row-reverse wrap;
+    a {
+      flex: 0 auto
+    }
 }
 
 .container-frog{
@@ -70,6 +75,11 @@
 @media all and (max-width: 600px) {
   /* We tell both sidebars to share a row */
   .aside { display: none }
+  .header  {
+    div {
+      display: none
+    }
+  }
 }
 
 /* Large screens */
