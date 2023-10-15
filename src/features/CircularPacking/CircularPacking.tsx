@@ -1,4 +1,4 @@
-import useD3 from "../../hooks/useD3";
+import useD3 from "../../utilities/hooks/useD3";
 import {d3CircularPacking} from "../../d3/D3CircularPacking";
 import './style.scss'
 import React, {useEffect, useMemo, useState} from "react";

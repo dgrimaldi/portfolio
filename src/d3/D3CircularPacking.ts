@@ -1,6 +1,6 @@
 import {BaseType, SimulationNodeDatum} from "d3";
 import * as d3 from "d3";
-const graphDimension: { width: number, height: number } = { width: 1250, height: 450};
+const graphDimension: { width: number, height: number } = { width: 1250, height: 750};
 const radius = 100;
 export const d3CircularPacking = (svg: d3.Selection<BaseType, unknown, HTMLElement, SVGElement>, numberOfCircle: number) => {
         // remove all drawn instances to new one
@@ -43,7 +43,7 @@ export const d3CircularPacking = (svg: d3.Selection<BaseType, unknown, HTMLEleme
         }
 
         const simulation = d3.forceSimulation(data)
-            .force("collide", d3.forceCollide(radius/5).iterations(4))
+            .force("collide", d3.forceCollide(radius/4.2).iterations(4))
             .on("tick", ticked);
         function started(event:any) {
             if (!event.active) simulation.alphaTarget(0.3).restart();
